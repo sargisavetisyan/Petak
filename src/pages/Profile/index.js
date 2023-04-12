@@ -15,12 +15,12 @@ export const Profile = React.memo(() => {
     useEffect(() => {
         setPath(search.replace(/[^A-Za-z]/ig, ''))
         console.log(path);
-    }, [])
+    }, [path])
     return (
         <div className={StyleProfile.profile} >
             <Container>
-                <Tabs
-                    activeKey={path}
+                {path && <Tabs
+                    defaultActiveKey={path}
                     id="justify-tab-example"
                     className={StyleProfile.tabs}
                     justify
@@ -38,10 +38,7 @@ export const Profile = React.memo(() => {
                         'Settings'
                     </Tab>
                 </Tabs>
-
-
-
-
+                }
             </Container>
         </div >
     )
