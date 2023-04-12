@@ -10,7 +10,7 @@ let arr = [
     { name: 'isPrivate', elements: ['Private', 'Agency'] },
     { name: 'owner', elements: ['Andranik', 'Anna', 'Ani', 'Vazgen'] },
     { name: 'ownerPhoto', elements: [require('../../images/men1.png'), require('../../images/men2.jpg'), require('../../images/men3.jpg')] },
-    { name: 'photo', elements: [require('../../images/car.png'), require('../../images/car1.png'), require('../../images/car2.png'), require('../../images/car3.png'), require('../../images/car4.png')] },
+    { name: 'photo', elements: ['https://static.carthrottle.com/workspace/uploads/posts/2016/02/7dfb2cfdaf503f1d9435624bbcc33a8e.jpg', 'https://sportishka.com/uploads/posts/2022-11/1667492837_35-sportishka-com-p-mashina-audi-krasivo-35.jpg', 'https://avatars.mds.yandex.net/i?id=f39d7ca9760a67fbaa3a22d66a5a60ef5b338db7-9167398-images-thumbs&n=13', 'https://damion.club/uploads/posts/2022-09/1663710155_42-damion-club-p-krasnaya-mashina-mazda-vkontakte-52.jpg', 'https://sportishka.com/uploads/posts/2022-11/thumbs/1667496170_31-sportishka-com-p-mashina-khonda-instagram-37.jpg'] },
     { name: 'region', elements: ['Yerevan', 'Shirak', 'Kotayq', 'Syuniq', 'Gexarquniq', 'Lori', 'Vayoc Dzor', 'Tavuhs', 'Armavir', 'Ararat', 'Aragacotn'] },
     { name: 'year', elements: [...year] },
     { name: 'mark', elements: ['Golf', 'Audi', 'Mazda', 'Honda', 'Bmw',] },

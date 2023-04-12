@@ -19,10 +19,9 @@ export const Home = React.memo(() => {
     const { materials } = useSelector(state => state.materialData)
     const { transports } = useSelector(state => state.transportData)
     const { books } = useSelector(state => state.bookData)
+
     const categories = ['Jobs', 'Service', 'Real Estate', 'Electronics', 'Cloting and Fashion', 'Home and Garden']
-
-
-    let categorys = ['Jobs', 'Cars']
+    const categorys = ['Jobs', 'Cars']
 
 
     return (
@@ -40,10 +39,11 @@ export const Home = React.memo(() => {
                                 return (
                                     <Link
                                         key={i}
-                                        // to={`/see/` + category.toLowerCase()}
                                         to={`${category.toLowerCase()}`}
                                     >
-                                        {category}
+                                        <div className={StyleHome.dropdownLink} >
+                                            {category}
+                                        </div>
                                     </Link>
                                 )
                             })}
@@ -78,7 +78,11 @@ export const Home = React.memo(() => {
                                         return (
                                             <SwiperSlide key={i}>
                                                 <Link to={'/car/' + car.id}>
-                                                    <img src={car.photo} alt='car' />
+                                                    <div
+                                                        className={StyleHome.photo}
+                                                        style={{ backgroundImage: `url(${car.photo})`, }}
+                                                    >
+                                                    </div>
                                                 </Link>
                                             </SwiperSlide>
                                         )
@@ -138,11 +142,13 @@ export const Home = React.memo(() => {
                             books.map((book, i) => {
                                 return (
                                     <SwiperSlide key={i}>
-                                        <img
-                                            src={book.photo}
-                                            alt='book'
-                                            style={{ width: '180px', height: '300px' }}
-                                        />
+                                        <Link>
+                                            <div
+                                                className={StyleHome.photoSmall}
+                                                style={{ backgroundImage: `url(${book.photo})` }}
+                                            >
+                                            </div>
+                                        </Link>
                                     </SwiperSlide>
                                 )
                             })

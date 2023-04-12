@@ -9,7 +9,7 @@ import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 import { useDispatch, useSelector } from "react-redux";
-import { verifyEmail, verifyPassword, verifyUser } from "../../features/user/userSlice";
+import { defaultAuth, verifyEmail, verifyPassword, verifyUser } from "../../features/user/userSlice";
 
 export const LogIn = React.memo(() => {
     const dispatch = useDispatch()
@@ -34,6 +34,7 @@ export const LogIn = React.memo(() => {
 
     useEffect(() => {
         if (authentication) {
+            dispatch(defaultAuth())
             navigate('/')
         }
     }, [authentication, responseEmail, responsePassword])

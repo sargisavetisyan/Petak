@@ -64,10 +64,11 @@ export const Products = React.memo(({ title, products }) => {
                             <div key={i} className={StyleProducts.item}>
                                 <Link className={StyleProducts.link}
                                     to={`/${title.toLowerCase()}/` + product.id}>
-                                    <img
-                                        src={product.photo}
-                                        alt={title}
-                                    />
+                                    <div
+                                        className={StyleProducts.photo}
+                                        style={{ backgroundImage: `url(${product.photo})`, }}
+                                    >
+                                    </div>
                                 </Link>
                                 <div className={StyleProducts.text}>
                                     {

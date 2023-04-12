@@ -40,10 +40,12 @@
         .link {
             width: 40%;
 
-            img {
-                object-fit: cover;
+            .photo {
                 width: 100%;
                 height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
             }
         }
 
@@ -159,10 +161,9 @@
                 .link {
                     width: 100%;
 
-                    img {
-                        object-fit: cover;
+                    .photo {
                         width: 100%;
-                        height: 100%;
+                        height: 250px;
                     }
                 }
 
@@ -215,6 +216,17 @@
 
 @media (max-width: 570px) {
     .products {
+        .items {
+            .item {
+                .link {
+                    .photo {
+                        width: 100%;
+                        height: 175px;
+                    }
+                }
+            }
+        }
+
         .smoll {
             width: 100%;
         }

@@ -2,7 +2,17 @@ import { createSlice } from "@reduxjs/toolkit"
 import { createArrayForInitialState } from "../../components/Saddle/createArray"
 
 let arr = [
-    { name: 'photo', elements: [require('../../images/IQOS 3 DUO.png'), require('../../images/IQOS 1.png'), require('../../images/IQOS 2.png'), require('../../images/IQOS 3.png'), require('../../images/IQOS 4.png'), require('../../images/IQOS 5.png')] },
+    {
+        name: 'photo',
+        elements: [
+            'https://peopletalk.ru/wp-content/uploads/2020/06/1_1200h800-2048x1365.jpg',
+            'https://www.digitallife.gr/wp-content/uploads/2018/10/IQOS-3-4.jpg',
+            'https://iqosdubai.ae/wp-content/uploads/2020/10/PicsArt_10-29-11.44.27.jpg',
+            'http://taudientu.net/wp-content/uploads/2020/03/thuoc-la-iqos.jpg',
+            'https://img.shoplineapp.com/media/image_clips/5c14d6219091ce000fe8a6cc/original.png?1544869391',
+            'https://static-sl.insales.ru/files/1/6884/10173156/original/3%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82_c5493dc051197ad374e8104c098c2abc.jpg'
+        ]
+    },
     { name: 'model', elements: ['IQOS 3 DUO', 'IQOS 1', 'IQOS 2', 'IQOS 3', 'IQOS 4', 'IQOS 5'] },
     { name: 'region', elements: ['Yerevan', 'Shirak', 'Kotayq', 'Syuniq', 'Gexarquniq', 'Lori', 'Vayoc Dzor', 'Tavuhs', 'Armavir', 'Ararat', 'Aragacotn'] },
     { name: 'shop', elements: ['City', 'Eldorado', 'Vega', 'VLV'] },

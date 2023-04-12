@@ -13,21 +13,18 @@ code {
 }
 
 
+// ********Layout******* \\
+
 .dropdown-menu {
     padding: 5px !important;
-    display: flex !important;
-    flex-direction: column !important;
+    background-color: #363535 !important;
 
     a {
-        font-size: 18px !important;
-        padding-bottom: 5px !important;
         color: #fff !important;
     }
-
-    a:hover {
-        background: #777373 !important;
-    }
 }
+
+// *********************** \\
 
 .form-check-input {
     width: 15px !important;

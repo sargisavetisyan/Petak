@@ -18,11 +18,16 @@ export const ProductDetalis = React.memo(({ title, product }) => {
                             {[1, 2, 3].map((el, i) => {
                                 return (
                                     <SwiperSlide key={i}>
-                                        <img
+                                        <div
+                                            className={StyleProductDetalis.photo}
+                                            style={{ backgroundImage: `url(${product.photo})`, }}
+                                        >
+                                        </div>
+                                        {/* <img
                                             src={product.photo}
                                             className={StyleProductDetalis.img}
                                             alt=''
-                                        />
+                                        /> */}
                                     </SwiperSlide>
                                 )
                             })}

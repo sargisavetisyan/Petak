@@ -10,10 +10,12 @@
         width: 100%;
         height: auto;
 
-        img {
+        .photo {
             width: 100%;
             height: 450px;
-            object-fit: cover;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
     }
 
@@ -92,7 +94,7 @@
 @media (max-width: 770px) {
     .info {
         .swiper {
-            img {
+            .photo {
                 height: 300px;
             }
         }
@@ -102,7 +104,7 @@
 @media (max-width: 570px) {
     .info {
         .swiper {
-            img {
+            .photo {
                 height: 170px;
             }
         }

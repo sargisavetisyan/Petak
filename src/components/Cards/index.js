@@ -30,12 +30,13 @@ export const Cards = React.memo(({ title, products }) => {
                                 className={StyleCards.link}
                             >
                                 <div className={StyleCards.carItem}>
-                                    <div>
-                                        <img
-                                            style={title === 'Car' || title === 'Apartments for Sale' ? { borderRadius: '20px' } : { borderRadius: '5px' }}
-                                            src={product.photo}
-                                            alt=''
-                                        />
+                                    <div
+                                        className={StyleCards.photo}
+                                        style={title === 'Car' || title === 'Apartments for Sale' ?
+                                            { borderRadius: '20px', backgroundImage: `url(${product.photo})` }
+                                            :
+                                            { borderRadius: '5px', backgroundImage: `url(${product.photo})` }}
+                                    >
                                     </div>
                                     <div className={StyleCards.text}>
                                         {title === 'Car' &&

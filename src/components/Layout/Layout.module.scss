@@ -1,6 +1,7 @@
 .navbar {
     font-size: 20px;
     font-family: 'Imprima';
+    min-height: 80px;
 
     .logo {
         display: flex;
@@ -20,8 +21,8 @@
 
     .search {
         .searchInput {
-            min-width: 280px;
-            min-height: 40px;
+            min-width: 450px;
+            min-height: 50px;
             margin-right: 100px;
             padding: 5px;
             background: rgba(217, 217, 217, 0.7);
@@ -35,7 +36,7 @@
         }
 
         .icon {
-            transform: translateX(50px);
+            transform: translateX(50px) translateY(-3px);
             color: rgba(0, 0, 0, 0.5);
         }
     }
@@ -46,15 +47,11 @@
         justify-content: center;
         text-align: center;
         font-weight: 700;
-        min-width: 80px;
+        padding: 0 15px;
         text-transform: capitalize;
         color: #010101;
-        margin-right: 40px;
+        margin-right: 60px;
         box-shadow: '0px 0px 10px #D38724',
-    }
-
-    .menuItem:first-child {
-        margin-right: 50px;
     }
 
     .menuItem:hover {
@@ -62,65 +59,91 @@
     }
 
     .user {
-        margin-right: 35px;
+        padding-right: 60px;
+    }
+}
 
-        // .userIcon {
-        //     height: 30px;
-        //     width: 30px;
-        //     margin-right: 30px;
-        //     border: 1px solid rgba(246, 163, 21, 0.8);
-        //     border-radius: 50%;
-        // }
+@media (max-width: 1410px) {
+    .navbar {
+        .search {
+            .searchInput {
+                min-width: 400px;
+                margin-right: 80px;
+            }
+        }
 
-        // .like {
-        //     transform: scale(1.1);
-        //     color: #0D0D0D;
-        //     cursor: pointer;
-        // }
+        .menuItem {
+            margin-right: 15px !important;
+        }
+
+        .user {
+            padding-right: 30px;
+        }
     }
 }
 
 @media (max-width: 1200px) {
-    .menuItem {
-        margin-right: 15px !important;
+    .navbar {
+        .search {
+            .searchInput {
+                min-width: 300px;
+                margin-right: 60px;
+            }
+        }
+
+        .menuItem {
+            padding: 0 15px;
+        }
+
+        .user {
+            padding-right: 30px;
+        }
     }
 }
 
 @media (max-width: 990px) {
-    .search {
-        position: relative;
-        top: 10px;
-        padding-bottom: 10px;
+    .navbar {
+        min-height: 56px;
 
-        .searchInput {
-            width: 100%;
-            margin-right: 0 !important;
-        }
-
-        .icon {
-            position: absolute;
+        .search {
+            position: relative;
             top: 10px;
-            left: -20px;
+            padding-bottom: 10px;
+
+            .searchInput {
+                width: 100%;
+                margin-right: 0 !important;
+                margin-bottom: 5px;
+            }
+
+            .icon {
+                position: absolute;
+                top: 20px;
+                left: -20px;
+            }
         }
-    }
 
-    .menuItem {
-        display: block !important;
-        text-align: start !important;
-        font-weight: 400 !important;
-        box-shadow: none !important;
-        color: #010101 !important;
-        background: none !important;
-    }
+        .menuItem {
+            display: block !important;
+            text-align: start !important;
+            font-weight: 400 !important;
+            box-shadow: none !important;
+            color: #010101 !important;
+            background: none !important;
+            padding: 0 0 5px 0;
+        }
 
-    .user {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        margin: 0 !important;
-    }
+        .user {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            margin: 0 !important;
+            padding-bottom: 5px;
+        }
 
-    .languages {
-        text-align: start !important;
+        .languages {
+            width: 5%;
+            text-align: start !important;
+        }
     }
 }

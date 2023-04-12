@@ -17,9 +17,14 @@ export const SimilarStatments = React.memo(({ title, products }) => {
                             className={StyleSimilarStatments.similarCarsItem}>
                             {
                                 title === 'car' && <>
-                                    <div>
-                                        <img src={product.photo} alt="" />
+                                    <div
+                                        className={StyleSimilarStatments.photo}
+                                        style={{ backgroundImage: `url(${product.photo})`, }}
+                                    >
                                     </div>
+                                    {/* <div>
+                                        <img src={product.photo} alt="" />
+                                    </div> */}
                                     <div className={StyleSimilarStatments.similarCarsText}>
                                         <div className={StyleSimilarStatments.textItem}>
                                             {product.mark} {product.type}
@@ -35,9 +40,14 @@ export const SimilarStatments = React.memo(({ title, products }) => {
                             }
                             {
                                 title === 'job' && <>
-                                    <div>
-                                        <img src={product.photo} alt="" />
+                                    <div
+                                        className={StyleSimilarStatments.photo}
+                                        style={{ backgroundImage: `url(${product.photo})`, }}
+                                    >
                                     </div>
+                                    {/* <div>
+                                        <img src={product.photo} alt="" />
+                                    </div> */}
                                     <div className={StyleSimilarStatments.similarCarsText}>
                                         <div className={StyleSimilarStatments.textItem}>
                                             {product.rate}, {product.work}

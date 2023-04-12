@@ -25,7 +25,11 @@ export const PetakRouter = () => {
                     <Route path='/signup' element={<SignUp />} />
                     <Route path='/jobs' element={<Jobs />} />
                     <Route path='/cars' element={<Cars />} />
+
+
                     {/* <Route path='/see/:name' element={<Categorys />} /> */}
+
+
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/service' element={<Service />} />
                     <Route path='/electronics' element={<Electronics />} />

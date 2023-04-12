@@ -12,7 +12,7 @@ import { User } from "../User";
 
 export const Layout = React.memo(() => {
     const { user } = useSelector(state => state.userData)
-    // const [icon, setIcon] = useState(true)
+    const [showIcon, setShowIcon] = useState(true)
     let activeStyle = {
         width: '100px',
         color: '#fff',
@@ -28,9 +28,14 @@ export const Layout = React.memo(() => {
         setActiveLanguage(language)
     }
 
-    // const search = () => {
-    //     setIcon(false)
-    // }
+    const search = (e) => {
+        if (e.target.value) {
+            setShowIcon(false)
+        } else {
+            setShowIcon(true)
+        }
+        // առայժմ այսքանը
+    }
 
     return (
         <>
@@ -50,11 +55,17 @@ export const Layout = React.memo(() => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <div className={StyleLayout.search}>
-                            <BsSearch className={StyleLayout.icon} />
-                            <input className={StyleLayout.searchInput}
+                            {showIcon &&
+                                <BsSearch
+                                    className={StyleLayout.icon}
+                                />
+                            }
+                            <input
+                                className={StyleLayout.searchInput}
+                                style={!showIcon ? { marginLeft: '20px' } : { marginLeft: '0px' }}
                                 type='text'
                                 placeholder="Search"
-                            // onChange={search}
+                                onChange={search}
                             />
                         </div>
                         <Nav className="me-auto" >
@@ -81,7 +92,7 @@ export const Layout = React.memo(() => {
                             {user.id && <User />}
                         </div>
                         <NavDropdown
-                            // className={StyleLayout.languages}
+                            className={StyleLayout.languages}
                             // id="nav-dropdown-dark-example"
                             title={activeLanguage}
                             menuVariant="dark"

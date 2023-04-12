@@ -9,9 +9,12 @@
         width: 100%;
         height: 130px;
 
-        img {
+        .photo {
             width: 125px;
             height: 130px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
 
         .similarCarsText {
@@ -47,7 +50,7 @@
         .similarCarsItem {
             height: 110px;
 
-            img {
+            .photo {
                 width: 100px;
                 height: 110px;
             }
