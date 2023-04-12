@@ -1,0 +1,16 @@
+.productss {
+    font-size: 20px;
+    line-height: 1.2;
+    height: 100%;
+    background: #1E252C;
+
+    .body {
+        display: flex;
+
+        .forms {
+            display: flex;
+            flex-direction: column;
+            margin-right: 50px;
+        }
+    }
+}

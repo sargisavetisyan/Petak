@@ -1,0 +1,126 @@
+.navbar {
+    font-size: 20px;
+    font-family: 'Imprima';
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        color: #02081E;
+        margin-right: 50px;
+
+        span {
+            margin-left: 5px;
+        }
+    }
+
+    .logo:hover {
+        color: #02081E;
+    }
+
+    .search {
+        .searchInput {
+            min-width: 280px;
+            min-height: 40px;
+            margin-right: 100px;
+            padding: 5px;
+            background: rgba(217, 217, 217, 0.7);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06);
+            border-radius: 6px;
+        }
+
+        .searchInput::placeholder {
+            padding-left: 60px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .icon {
+            transform: translateX(50px);
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .menuItem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 700;
+        min-width: 80px;
+        text-transform: capitalize;
+        color: #010101;
+        margin-right: 40px;
+        box-shadow: '0px 0px 10px #D38724',
+    }
+
+    .menuItem:first-child {
+        margin-right: 50px;
+    }
+
+    .menuItem:hover {
+        color: #010101
+    }
+
+    .user {
+        margin-right: 35px;
+
+        // .userIcon {
+        //     height: 30px;
+        //     width: 30px;
+        //     margin-right: 30px;
+        //     border: 1px solid rgba(246, 163, 21, 0.8);
+        //     border-radius: 50%;
+        // }
+
+        // .like {
+        //     transform: scale(1.1);
+        //     color: #0D0D0D;
+        //     cursor: pointer;
+        // }
+    }
+}
+
+@media (max-width: 1200px) {
+    .menuItem {
+        margin-right: 15px !important;
+    }
+}
+
+@media (max-width: 990px) {
+    .search {
+        position: relative;
+        top: 10px;
+        padding-bottom: 10px;
+
+        .searchInput {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+
+        .icon {
+            position: absolute;
+            top: 10px;
+            left: -20px;
+        }
+    }
+
+    .menuItem {
+        display: block !important;
+        text-align: start !important;
+        font-weight: 400 !important;
+        box-shadow: none !important;
+        color: #010101 !important;
+        background: none !important;
+    }
+
+    .user {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin: 0 !important;
+    }
+
+    .languages {
+        text-align: start !important;
+    }
+}

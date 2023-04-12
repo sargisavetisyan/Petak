@@ -1,0 +1,20 @@
+.header {
+    font-family: 'Inter';
+    color: rgba(255, 255, 255, 0.8);
+    text-align: start;
+    padding: 50px 0 40px 0;
+
+    .link {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    span {
+        padding: 0 0 0 5px;
+    }
+}
+
+@media (max-width: 990px) {
+    .header {
+        padding: 20px 0;
+    }
+}

@@ -1,0 +1,127 @@
+.card {
+    padding: 50px 0 0 0;
+
+    .title {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: start;
+        color: #FFF;
+        margin-bottom: 30px;
+
+        span {
+            margin-left: 5px;
+            color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.5);
+        }
+    }
+
+    .body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .link {
+            flex: 0 1 20%;
+            padding: 0px 0px 30px 0px;
+            transition: all 0.5s ease 0s;
+
+            .carItem {
+                min-width: 220px;
+                min-height: 335px;
+                background: #FFF;
+                border-radius: 20px;
+                padding: 20px 25px;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+
+                .text {
+                    font-size: 16px;
+                    font-family: 'Sen';
+                    margin-top: 7px;
+                    color: #000;
+                    text-align: start;
+
+                    p {
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+        }
+
+        .link:hover {
+            transform: scale(1.01);
+        }
+    }
+
+    .btn {
+        display: flex;
+        justify-content: end;
+
+        button {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            line-height: calc(44 / 36);
+            color: #F7A212;
+            background: none;
+            transition: all 0.5s ease 0s;
+        }
+
+        button:hover {
+            box-shadow: 2px 2px 2px 2px white, 4px 4px 2px 2px #C76637;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .card {
+        padding: 30px 0 0 0;
+
+        .carItem {
+            min-height: 365px !important;
+        }
+
+        .link:not(:last-child) {
+            flex: 0 1 45%;
+        }
+
+        .link:last-child {
+            flex: 0 1 45%;
+        }
+
+        button {
+            font-size: 28px !important;
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .card {
+        .link {
+            padding: 0px 0px 15px 0px !important;
+        }
+
+        .link:not(:last-child) {
+            flex: 0 1 100%;
+        }
+
+        .link:last-child {
+            flex: 0 1 100%;
+        }
+
+        .text {
+            font-size: 24px !important;
+        }
+
+        .btn {
+            justify-content: center;
+        }
+    }
+}

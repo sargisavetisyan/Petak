@@ -1,0 +1,58 @@
+.situationsJobs {
+    padding: 20px;
+    text-align: start;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+    .item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+
+
+    .operations {
+        // height: 254px;
+        margin-bottom: 40px;
+        padding: 25px 20px;
+
+        .item:last-child {
+            padding-top: 25px;
+            border-top: 1px solid #00000080;
+        }
+    }
+}
+
+// .situationsProducts {
+//     width: 446px;
+//     height: 203px;
+//     padding: 30px;
+//     text-align: start;
+//     background: #FFFFFF;
+//     border-radius: 10px;
+//     margin-bottom: 30px;
+
+//     .item:not(:last-child) {
+//         margin-bottom: 25px;
+//     }
+
+//     .item:last-child {
+//         padding-top: 20px;
+//         border-top: 1px solid #00000080;
+//     }
+// }
+
+@media (max-width: 990px) {
+    .situationsJobs {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        background: none;
+        color: #FFF;
+        margin-bottom: 10px;
+
+        .item {
+            margin-bottom: 0 !important;
+        }
+    }
+}
