@@ -23,11 +23,6 @@ export const ProductDetalis = React.memo(({ title, product }) => {
                                             style={{ backgroundImage: `url(${product.photo})`, }}
                                         >
                                         </div>
-                                        {/* <img
-                                            src={product.photo}
-                                            className={StyleProductDetalis.img}
-                                            alt=''
-                                        /> */}
                                     </SwiperSlide>
                                 )
                             })}

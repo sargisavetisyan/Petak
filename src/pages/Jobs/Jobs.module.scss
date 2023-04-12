@@ -59,7 +59,8 @@
                 }
 
                 .itemRegion {
-                    margin-left: 24px;
+                    font-size: 16px;
+                    margin-left: 40px;
                 }
             }
 
@@ -91,6 +92,7 @@
 
             .category {
                 margin-bottom: 30px;
+                overflow-y: auto;
 
                 .content {
                     display: flex;

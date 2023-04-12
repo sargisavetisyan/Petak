@@ -26,10 +26,10 @@ export const Products = React.memo(({ title, products }) => {
 
     // paginate
 
-    const [items, setItems] = useState(9)
+    const [items, setItems] = useState(10)
     const [temp, setTemp] = useState(0)
 
-    let itemsPerPage = 9
+    let itemsPerPage = 10
     const [itemOffset, setItemOffset] = useState(0);
     const pageCount = Math.ceil(products.length / itemsPerPage);
 

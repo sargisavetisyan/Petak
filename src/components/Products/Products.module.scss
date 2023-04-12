@@ -28,17 +28,14 @@
         }
     }
 
-
-
-
     .item {
         display: flex;
         width: 100%;
-        height: 170px;
+        height: 250px;
         background: #1E252C;
 
         .link {
-            width: 40%;
+            width: 50%;
 
             .photo {
                 width: 100%;
@@ -54,13 +51,12 @@
             align-items: center;
             justify-content: space-between;
             flex: 0 1 100%;
-            padding: 15px;
+            padding: 15px 35px;
             text-align: start;
 
             p,
             .navigation {
                 color: #FFF;
-                margin-bottom: 8px;
                 line-height: 1;
             }
 
@@ -70,15 +66,12 @@
 
             .urgent {
                 min-width: 100px;
-                min-height: 40px;
-                background: #C69136;
+                min-height: 30px;
+                background: #f27360;
                 border-radius: 5px;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
         }
-
-
-
 
         .like {
             transform: scale(1.5);
@@ -133,6 +126,14 @@
 @media (max-width: 990px) {
     .products {
         width: 100%;
+
+        .items {
+            .item {
+                .link {
+                    width: 60%;
+                }
+            }
+        }
     }
 }
 
@@ -168,6 +169,7 @@
                 }
 
                 .text {
+                    padding: 15px 0;
 
                     p,
                     .navigation {

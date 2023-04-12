@@ -27,12 +27,15 @@ export const Jobs = React.memo(() => {
     const [agenc, setAgenc] = useState(false)
 
     const [heigth, setHeigth] = useState('')
+
     const location = () => {
-        if (heigth) {
-            setHeigth('')
-        } else {
-            setHeigth('593px')
-        }
+        heigth ? setHeigth('') : setHeigth('593px')
+    }
+
+    const [heigthCategory, setHeigthCategory] = useState('')
+
+    const showHeightCategory = () => {
+        heigthCategory ? setHeigthCategory('') : setHeigthCategory('593px')
     }
 
     const advertisements = [
@@ -286,9 +289,13 @@ export const Jobs = React.memo(() => {
                                     )
                                 } else {
                                     return (
-                                        <Form key={i} className={StyleJobs.category} >
+                                        <Form
+                                            key={i}
+                                            className={StyleJobs.category}
+                                            style={{ height: `${heigthCategory}` }}
+                                        >
                                             <Accordion.Item eventKey={i} className={StyleJobs.acardionItem} onClick={closeSwiper}>
-                                                <Accordion.Header>{dataRegionsCursPriceCategory.name}</Accordion.Header>
+                                                <Accordion.Header onClick={showHeightCategory}>{dataRegionsCursPriceCategory.name}</Accordion.Header>
                                                 <Accordion.Body>
                                                     {dataRegionsCursPriceCategory.elements.map((el, index) => {
                                                         return (
