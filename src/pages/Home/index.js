@@ -41,12 +41,10 @@ export const Home = React.memo(() => {
                             className={StyleHome.menuIcon}
                             onClick={show}
                         />
-                        <div className={StyleHome.categorys}>
-                            <AllCategorys
-                                openCanvas={showCategorys}
-                                onHide={show}
-                            />
-                        </div>
+                        <AllCategorys
+                            openCanvas={showCategorys}
+                            onHide={show}
+                        />
                         <NavDropdown
                             className={StyleHome.dropdown}
                             // id="nav-dropdown-dark-example"

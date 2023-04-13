@@ -32,7 +32,6 @@ export const AllCategorys = React.memo(({ openCanvas, onHide }) => {
                     })}
                 </Offcanvas.Body>
             </Offcanvas>
-
         </div>
     )
 })

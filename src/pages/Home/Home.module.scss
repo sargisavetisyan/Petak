@@ -49,7 +49,6 @@
             }
         }
 
-        .categorys,
         .menuIcon {
             display: none
         }
@@ -91,16 +90,6 @@
                 color: #fff
             }
 
-            .categorys {
-                display: block;
-            }
-
-            // .items {
-            //     flex: 0 0 50%;
-            //     margin-right: 0 !important;
-            //     text-align: start;
-            // }
-
             .swiper {
                 .photo {
                     height: 400px !important;
@@ -115,15 +104,6 @@
         .homeMain {
             padding-bottom: 30px !important;
         }
-
-        // .menu {
-        //     display: block !important;
-        //     text-align: start;
-
-        //     .homeMenu {
-        //         display: block;
-        //     }
-        // }
 
         .swiper {
             .photo {
