@@ -8,7 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Autoplay, Pagination } from 'swiper';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Cards } from "../../components/Cards";
-
+import { BsSliders } from 'react-icons/bs';
+import { AllCategorys } from "../../components/AllCategorys";
+import { useState } from "react";
 
 
 export const Home = React.memo(() => {
@@ -20,6 +22,12 @@ export const Home = React.memo(() => {
     const { transports } = useSelector(state => state.transportData)
     const { books } = useSelector(state => state.bookData)
 
+    const [showCategorys, setShowCategorys] = useState(false)
+
+    const show = () => {
+        setShowCategorys(!showCategorys)
+    }
+
     const categories = ['Jobs', 'Service', 'Real Estate', 'Electronics', 'Cloting and Fashion', 'Home and Garden']
     const categorys = ['Jobs', 'Cars']
 
@@ -29,6 +37,16 @@ export const Home = React.memo(() => {
             <Container>
                 <div className={StyleHome.homeMain}>
                     <div className={StyleHome.menu}>
+                        <BsSliders
+                            className={StyleHome.menuIcon}
+                            onClick={show}
+                        />
+                        <div className={StyleHome.categorys}>
+                            <AllCategorys
+                                openCanvas={showCategorys}
+                                onHide={show}
+                            />
+                        </div>
                         <NavDropdown
                             className={StyleHome.dropdown}
                             // id="nav-dropdown-dark-example"

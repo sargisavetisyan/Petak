@@ -1,0 +1,23 @@
+.canvas {
+    color: #fff;
+    background-color: #363535;
+
+    button {
+        background-color: #fff !important;
+    }
+
+    .link {
+        color: #fff;
+        transition: all 0.5s ease 0s;
+    }
+
+    .link:hover {
+        color: #e7d6d6;
+    }
+}
+
+@media (max-width: 570px) {
+    .canvas {
+        width: 60% !important;
+    }
+}
