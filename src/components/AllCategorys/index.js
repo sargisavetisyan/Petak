@@ -14,6 +14,7 @@ export const AllCategorys = React.memo(({ openCanvas, onHide }) => {
                 show={openCanvas}
                 onHide={onHide}
                 placement='end'
+            // responsive="lg"
             >
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>All Categorys</Offcanvas.Title>

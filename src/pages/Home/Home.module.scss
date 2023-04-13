@@ -1,3 +1,12 @@
+.loadding {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px !important;
+    height: 300px !important;
+}
+
 .home {
     font-size: 20px;
 
@@ -76,6 +85,11 @@
 }
 
 @media (max-width: 991px) {
+    .loadding {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
     .home {
         .homeMain {
 
@@ -114,6 +128,11 @@
 }
 
 @media (max-width: 570px) {
+    .loadding {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
     .home {
         .swiper {
             .photo {
