@@ -12,6 +12,8 @@ import { BsSliders } from 'react-icons/bs';
 import { AllCategorys } from "../../components/AllCategorys";
 import { useState } from "react";
 import ReactLoading from 'react-loading';
+import { User } from "../../components/User";
+import { ModalLogInOrSignUp } from "../../components/ModalLogInOrSignUp";
 
 
 export const Home = React.memo(() => {
@@ -22,6 +24,13 @@ export const Home = React.memo(() => {
     const { materials } = useSelector(state => state.materialData)
     const { transports } = useSelector(state => state.transportData)
     const { books } = useSelector(state => state.bookData)
+
+    const { user } = useSelector(state => state.userData)
+    const [showModal, setShowModal] = useState(false)
+
+    const openModal = () => {
+        setShowModal(true)
+    }
 
     const [loading, setLoading] = useState(true)
     const closeLoading = () => {
@@ -53,7 +62,6 @@ export const Home = React.memo(() => {
                 />
                 :
                 <div className={StyleHome.home}>
-
                     <Container>
                         <div className={StyleHome.homeMain}>
                             <div className={StyleHome.menu}>
@@ -75,7 +83,8 @@ export const Home = React.memo(() => {
                                         return (
                                             <Link
                                                 key={i}
-                                                to={`${category.toLowerCase()}`}
+                                                to={user.id && `${category.toLowerCase()}`}
+                                                onClick={openModal}
                                             >
                                                 <div className={StyleHome.dropdownLink} >
                                                     {category}
@@ -92,8 +101,9 @@ export const Home = React.memo(() => {
                                                 className={StyleHome.items}
                                             >
                                                 <Link
-                                                    to={`/${categorie.toLowerCase()}`}
+                                                    to={user.id && `/${categorie.toLowerCase()}`}
                                                     className={StyleHome.item}
+                                                    onClick={openModal}
                                                 >
                                                     {categorie}
                                                 </Link>
@@ -113,7 +123,10 @@ export const Home = React.memo(() => {
                                             if (i < 3) {
                                                 return (
                                                     <SwiperSlide key={i}>
-                                                        <Link to={'/car/' + car.id}>
+                                                        <Link
+                                                            to={user.id && '/car/' + car.id}
+                                                            onClick={openModal}
+                                                        >
                                                             <div
                                                                 className={StyleHome.photo}
                                                                 style={{ backgroundImage: `url(${car.photo})`, }}
@@ -178,7 +191,9 @@ export const Home = React.memo(() => {
                                     books.map((book, i) => {
                                         return (
                                             <SwiperSlide key={i}>
-                                                <Link>
+                                                <Link
+                                                    onClick={openModal}
+                                                >
                                                     <div
                                                         className={StyleHome.photoSmall}
                                                         style={{ backgroundImage: `url(${book.photo})` }}
@@ -202,6 +217,10 @@ export const Home = React.memo(() => {
                     </Container >
                 </div >
             }
+            <ModalLogInOrSignUp
+                showModal={showModal}
+                onCloseModal={setShowModal}
+            />
         </>
     )
 })
