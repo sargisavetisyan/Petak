@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { User } from "../User";
 import { ModalLogInOrSignUp } from "../ModalLogInOrSignUp";
 import { useEffect } from "react";
+import { Footer } from "../Footer";
 
 
 export const Layout = React.memo(() => {
@@ -154,6 +155,7 @@ export const Layout = React.memo(() => {
                 </Container>
             </Navbar>
             <Outlet />
+            <Footer />
         </>
     )
 })

@@ -14,6 +14,7 @@ import { useState } from "react";
 import ReactLoading from 'react-loading';
 import { User } from "../../components/User";
 import { ModalLogInOrSignUp } from "../../components/ModalLogInOrSignUp";
+import { Footer } from "../../components/Footer";
 
 
 export const Home = React.memo(() => {
@@ -61,161 +62,163 @@ export const Home = React.memo(() => {
                     color={'#FFC107'}
                 />
                 :
-                <div className={StyleHome.home}>
-                    <Container>
-                        <div className={StyleHome.homeMain}>
-                            <div className={StyleHome.menu}>
-                                <BsSliders
-                                    className={StyleHome.menuIcon}
-                                    onClick={show}
-                                />
-                                <AllCategorys
-                                    openCanvas={showCategorys}
-                                    onHide={show}
-                                />
-                                <NavDropdown
-                                    className={StyleHome.dropdown}
-                                    // id="nav-dropdown-dark-example"
-                                    title='All Categories'
-                                // menuVariant="dark"
-                                >
-                                    {categorys.map((category, i) => {
-                                        return (
-                                            <Link
-                                                key={i}
-                                                to={user.id && `${category.toLowerCase()}`}
-                                                onClick={openModal}
-                                            >
-                                                <div className={StyleHome.dropdownLink} >
-                                                    {category}
-                                                </div>
-                                            </Link>
-                                        )
-                                    })}
-                                </NavDropdown>
-                                <Nav className={StyleHome.homeMenu}>
-                                    {categories.map((categorie, i) => {
-                                        return (
-                                            <Nav.Item
-                                                key={i}
-                                                className={StyleHome.items}
-                                            >
+                <>
+                    <div className={StyleHome.home}>
+                        <Container>
+                            <div className={StyleHome.homeMain}>
+                                <div className={StyleHome.menu}>
+                                    <BsSliders
+                                        className={StyleHome.menuIcon}
+                                        onClick={show}
+                                    />
+                                    <AllCategorys
+                                        openCanvas={showCategorys}
+                                        onHide={show}
+                                    />
+                                    <NavDropdown
+                                        className={StyleHome.dropdown}
+                                        // id="nav-dropdown-dark-example"
+                                        title='All Categories'
+                                    // menuVariant="dark"
+                                    >
+                                        {categorys.map((category, i) => {
+                                            return (
                                                 <Link
-                                                    to={user.id && `/${categorie.toLowerCase()}`}
-                                                    className={StyleHome.item}
+                                                    key={i}
+                                                    to={user.id && `${category.toLowerCase()}`}
                                                     onClick={openModal}
                                                 >
-                                                    {categorie}
+                                                    <div className={StyleHome.dropdownLink} >
+                                                        {category}
+                                                    </div>
                                                 </Link>
-                                            </Nav.Item>
-                                        )
-                                    })}
-                                </Nav>
-                            </div>
-                            <div className={StyleHome.swiper}>
+                                            )
+                                        })}
+                                    </NavDropdown>
+                                    <Nav className={StyleHome.homeMenu}>
+                                        {categories.map((categorie, i) => {
+                                            return (
+                                                <Nav.Item
+                                                    key={i}
+                                                    className={StyleHome.items}
+                                                >
+                                                    <Link
+                                                        to={user.id && `/${categorie.toLowerCase()}`}
+                                                        className={StyleHome.item}
+                                                        onClick={openModal}
+                                                    >
+                                                        {categorie}
+                                                    </Link>
+                                                </Nav.Item>
+                                            )
+                                        })}
+                                    </Nav>
+                                </div>
+                                <div className={StyleHome.swiper}>
+                                    <Swiper
+                                        modules={[Navigation, Autoplay, Pagination]}
+                                        pagination={{ clickable: true }}
+                                        autoplay={true}
+                                    >
+                                        {
+                                            cars.map((car, i) => {
+                                                if (i < 3) {
+                                                    return (
+                                                        <SwiperSlide key={i}>
+                                                            <Link
+                                                                to={user.id && '/car/' + car.id}
+                                                                onClick={openModal}
+                                                            >
+                                                                <div
+                                                                    className={StyleHome.photo}
+                                                                    style={{ backgroundImage: `url(${car.photo})`, }}
+                                                                >
+                                                                </div>
+                                                            </Link>
+                                                        </SwiperSlide>
+                                                    )
+                                                }
+                                            })
+                                        }
+                                    </Swiper>
+                                </div>
+                                <Cards
+                                    title='Car'
+                                    products={cars}
+                                />
+                                <Cards
+                                    title='Apartments for Sale'
+                                    products={apartaments}
+                                />
+                                {/* petq e mtacvi vonc sarqel tvyal section@ */}
+
+                                <Cards
+                                    title='Mobile phone'
+                                    products={mobiles}
+                                />
+                                <Cards
+                                    title='Job'
+                                    products={jobs}
+                                />
                                 <Swiper
-                                    modules={[Navigation, Autoplay, Pagination]}
-                                    pagination={{ clickable: true }}
+                                    style={{ padding: '80px 0' }}
+                                    modules={[EffectCoverflow, Navigation, Autoplay, Pagination]}
+                                    effect={"coverflow"}
+                                    slidesPerView={7}
+                                    centeredSlides={true}
+                                    coverflowEffect={{
+                                        rotate: 0,
+                                        stretch: 130,
+                                        depth: 70,
+                                        modifier: 4,
+                                    }}
+                                    navigation
                                     autoplay={true}
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 1
+                                        },
+                                        500: {
+                                            slidesPerView: 2
+                                        },
+                                        900: {
+                                            slidesPerView: 4
+                                        },
+                                        1200: {
+                                            slidesPerView: 7
+                                        }
+                                    }}
                                 >
                                     {
-                                        cars.map((car, i) => {
-                                            if (i < 3) {
-                                                return (
-                                                    <SwiperSlide key={i}>
-                                                        <Link
-                                                            to={user.id && '/car/' + car.id}
-                                                            onClick={openModal}
+                                        books.map((book, i) => {
+                                            return (
+                                                <SwiperSlide key={i}>
+                                                    <Link
+                                                        onClick={openModal}
+                                                    >
+                                                        <div
+                                                            className={StyleHome.photoSmall}
+                                                            style={{ backgroundImage: `url(${book.photo})` }}
                                                         >
-                                                            <div
-                                                                className={StyleHome.photo}
-                                                                style={{ backgroundImage: `url(${car.photo})`, }}
-                                                            >
-                                                            </div>
-                                                        </Link>
-                                                    </SwiperSlide>
-                                                )
-                                            }
+                                                        </div>
+                                                    </Link>
+                                                </SwiperSlide>
+                                            )
                                         })
                                     }
                                 </Swiper>
+                                <Cards
+                                    title='Building material'
+                                    products={materials}
+                                />
+                                <Cards
+                                    title='Trasportation and Taxi'
+                                    products={transports}
+                                />
                             </div>
-                            <Cards
-                                title='Car'
-                                products={cars}
-                            />
-                            <Cards
-                                title='Apartments for Sale'
-                                products={apartaments}
-                            />
-                            {/* petq e mtacvi vonc sarqel tvyal section@ */}
-
-                            <Cards
-                                title='Mobile phone'
-                                products={mobiles}
-                            />
-                            <Cards
-                                title='Job'
-                                products={jobs}
-                            />
-                            <Swiper
-                                style={{ padding: '80px 0' }}
-                                modules={[EffectCoverflow, Navigation, Autoplay, Pagination]}
-                                effect={"coverflow"}
-                                slidesPerView={7}
-                                centeredSlides={true}
-                                coverflowEffect={{
-                                    rotate: 0,
-                                    stretch: 130,
-                                    depth: 70,
-                                    modifier: 4,
-                                }}
-                                navigation
-                                autoplay={true}
-                                breakpoints={{
-                                    0: {
-                                        slidesPerView: 1
-                                    },
-                                    500: {
-                                        slidesPerView: 2
-                                    },
-                                    900: {
-                                        slidesPerView: 4
-                                    },
-                                    1200: {
-                                        slidesPerView: 7
-                                    }
-                                }}
-                            >
-                                {
-                                    books.map((book, i) => {
-                                        return (
-                                            <SwiperSlide key={i}>
-                                                <Link
-                                                    onClick={openModal}
-                                                >
-                                                    <div
-                                                        className={StyleHome.photoSmall}
-                                                        style={{ backgroundImage: `url(${book.photo})` }}
-                                                    >
-                                                    </div>
-                                                </Link>
-                                            </SwiperSlide>
-                                        )
-                                    })
-                                }
-                            </Swiper>
-                            <Cards
-                                title='Building material'
-                                products={materials}
-                            />
-                            <Cards
-                                title='Trasportation and Taxi'
-                                products={transports}
-                            />
-                        </div>
-                    </Container >
-                </div >
+                        </Container >
+                    </div >
+                </>
             }
             <ModalLogInOrSignUp
                 showModal={showModal}
