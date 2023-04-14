@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import StyleLayout from './Layout.module.scss'
 import { BsSearch } from 'react-icons/bs'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useSelector } from "react-redux";
 import { User } from "../User";
+import { ModalLogInOrSignUp } from "../ModalLogInOrSignUp";
+import { useEffect } from "react";
 
 
 export const Layout = React.memo(() => {
     const { user } = useSelector(state => state.userData)
+    const [path, setPath] = useState('')
+    const { pathname } = useLocation()
+
     const [showIcon, setShowIcon] = useState(true)
+    const [showModal, setShowModal] = useState(false)
+    const [valueInput, setValueInput] = useState('')
+
     let activeStyle = {
         width: '100px',
         color: '#fff',
@@ -30,12 +38,36 @@ export const Layout = React.memo(() => {
 
     const search = (e) => {
         if (e.target.value) {
-            setShowIcon(false)
+            setValueInput(e.target.value)
+            if (user.id) setShowIcon(false)
+            if (!user.id) setShowModal(true)
         } else {
             setShowIcon(true)
         }
         // առայժմ այսքանը
     }
+    // ***** code write for searchInput inputValue searchIcon modal ***** \\
+
+    useEffect(() => {
+        if (!showModal) setShowIcon(true)
+    }, [showModal])
+
+    useEffect(() => {
+        setShowModal(false)
+        if (user.id) setValueInput('')
+    }, [user])
+
+    useEffect(() => {
+        setPath(pathname.replace(/[^A-Za-z]/ig, ''))
+    }, [pathname])
+
+    useEffect(() => {
+        setShowModal(false)
+        setValueInput('')
+        setShowIcon(true)
+    }, [path])
+
+    // ******************************************************************** \\
 
     return (
         <>
@@ -65,9 +97,16 @@ export const Layout = React.memo(() => {
                                 style={!showIcon ? { marginLeft: '20px' } : { marginLeft: '0px' }}
                                 type='text'
                                 placeholder="Search"
+                                value={user.id ? valueInput : ''}
                                 onChange={search}
                             />
                         </div>
+                        {showModal && path !== 'login' &&
+                            <ModalLogInOrSignUp
+                                showModal={showModal}
+                                onCloseModal={setShowModal}
+                            />
+                        }
                         <Nav className="me-auto" >
                             <NavLink
                                 className={StyleLayout.menuItem}

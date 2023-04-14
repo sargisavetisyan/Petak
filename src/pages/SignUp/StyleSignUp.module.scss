@@ -2,7 +2,7 @@
     font-family: 'Sen';
     font-size: 24px;
     padding: 100px 0 100px 0;
-    color: #000000;
+    color: #000;
 
     .main {
         display: flex;
@@ -142,6 +142,11 @@
             }
         }
     }
+}
+
+// for modal
+.bodyForModal {
+    padding: 0;
 }
 
 @media (max-width: 1200px) {
@@ -292,6 +297,181 @@
             .logo {
                 display: none;
 
+            }
+        }
+    }
+}
+
+
+
+
+// **** For Modal **** \\
+
+
+.bodyModal {
+    font-size: 28px;
+    padding: 20px;
+
+    .main {
+        .form {
+            width: 100%;
+
+            .header {
+                p {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+
+                h1 {
+                    font-size: 30px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .item {
+                margin-bottom: 30px;
+
+                label,
+                .label {
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    span {
+                        font-size: 20px;
+                        margin-right: 30px;
+                        cursor: pointer;
+                        transform: translateY(45px);
+                    }
+                }
+
+                .input {
+                    font-size: 22px;
+                    min-height: 80px;
+                    padding-left: 40px;
+                    background: #FFF;
+                    border: 1px solid rgba(0, 0, 0, 0.5);
+                    border-radius: 6px;
+                    min-height: 50px;
+                }
+
+                input::placeholder {
+                    font-size: 20px;
+                }
+
+                .input:focus {
+                    box-shadow: 0 0 0 2px white, 0 0 0 4px #3A2F28;
+                }
+
+                .error {
+                    font-family: 'Merriweather';
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #FF0000;
+                }
+            }
+
+            .btn,
+            .socialBtn {
+                font-size: 24px;
+                transition: all 0.7s ease 0s;
+            }
+
+            .socialHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+
+                .socialHeaderLine {
+                    width: 20%;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                }
+
+                .socialHeaderText {
+                    font-size: 22px;
+                }
+
+            }
+
+            .social {
+                display: flex;
+                justify-content: space-between;
+
+                .socialBtn {
+                    width: 40%;
+                    color: #1877F2;
+                    background: none;
+                    margin-bottom: 50px;
+                    border: 3px solid #F7A212;
+                }
+
+                .socialBtn:hover {
+                    background: #F7A212;
+                }
+            }
+
+            .link {
+                padding-left: 10px;
+                color: #F7A212;
+            }
+        }
+
+        .logo {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .bodyModal {
+        .main {
+            .form {
+                .item {
+                    .input {
+                        min-height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .bodyModal {
+        padding: 0;
+        font-size: 20px;
+
+        .main {
+            .form {
+                .item {
+                    .input {
+                        padding-left: 15px;
+                        min-height: 30px;
+                    }
+
+                    .input::placeholder {
+                        font-size: 16px;
+                    }
+                }
+
+                .socialHeader {
+                    margin-bottom: 20px;
+
+                    .socialHeaderLine {
+                        width: 10%;
+                    }
+                }
+
+                .social {
+                    display: flex;
+                    flex-direction: column;
+
+                    .socialBtn {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
             }
         }
     }

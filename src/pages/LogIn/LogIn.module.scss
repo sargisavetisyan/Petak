@@ -42,7 +42,13 @@
 }
 
 @media (max-width: 770px) {
+    .itemInput input {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
     .forgot {
+        text-align: center;
         margin-bottom: 30px;
     }
 }

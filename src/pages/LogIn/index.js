@@ -11,7 +11,7 @@ import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 import { useDispatch, useSelector } from "react-redux";
 import { defaultAuth, verifyEmail, verifyPassword, verifyUser } from "../../features/user/userSlice";
 
-export const LogIn = React.memo(() => {
+export const LogIn = React.memo(({ style }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { authentication, responseEmail, responsePassword } = useSelector(state => state.userData)
@@ -40,7 +40,7 @@ export const LogIn = React.memo(() => {
     }, [authentication, responseEmail, responsePassword])
 
     return (
-        <div className={StyleSignUp.body}>
+        <div className={!style ? StyleSignUp.body : StyleSignUp.bodyModal}>
             <Container>
                 <div className={StyleSignUp.main}>
                     <div className={StyleSignUp.form}>

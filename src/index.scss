@@ -133,6 +133,12 @@ code {
     }
 }
 
+// *****  modal  ***** \\
+
+.react-responsive-modal-closeButton {
+    display: none !important;
+}
+
 @media (max-width: 990px) {
     .nav-tabs {
         .nav-link.active {
