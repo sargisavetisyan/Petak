@@ -11,14 +11,12 @@ import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 import { useDispatch, useSelector } from "react-redux";
 import { defaultAuth, verifyUser } from "../../features/user/userSlice";
 
-export const LogIn = React.memo(({ style, onCloseModal }) => {
+export const LogIn = React.memo(({ style, showModal, onCloseModal }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { authentication, responseEmail, responsePassword } = useSelector(state => state.userData)
 
     const [eyePassword, setEyePassword] = useState(false)
-
-    const git = 1
 
     const {
         register,
@@ -35,7 +33,7 @@ export const LogIn = React.memo(({ style, onCloseModal }) => {
     useEffect(() => {
         if (authentication) {
             dispatch(defaultAuth())
-            onCloseModal(false)
+            if (showModal) onCloseModal()
             navigate('/')
         }
     }, [authentication, responseEmail, responsePassword])
@@ -148,6 +146,7 @@ export const LogIn = React.memo(({ style, onCloseModal }) => {
                                 <Link
                                     to={'/signup'}
                                     className={StyleSignUp.link}
+                                    onClick={onCloseModal}
                                 >
                                     Sign Up for free
                                 </Link>

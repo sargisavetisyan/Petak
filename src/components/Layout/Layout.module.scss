@@ -20,7 +20,6 @@
     }
 
     .search {
-
         .searchInput {
             min-width: 450px;
             min-height: 50px;
@@ -134,17 +133,21 @@
             padding: 0 0 5px 0;
         }
 
-        .user {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            margin: 0 !important;
-            padding-bottom: 5px;
-        }
+        .user_languages {
+            display: block !important;
 
-        .languages {
-            width: 5%;
-            text-align: start !important;
+            .user {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                margin: 0 !important;
+                padding-bottom: 5px;
+            }
+
+            .languages {
+                width: 5%;
+                text-align: start !important;
+            }
         }
     }
 }

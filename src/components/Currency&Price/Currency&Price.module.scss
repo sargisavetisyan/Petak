@@ -1,0 +1,56 @@
+.body {
+    text-align: start;
+
+    form {
+        margin-bottom: 30px;
+    }
+
+    button {
+        font-family: 'Sen' !important;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        font-size: 20px !important;
+        padding: 20px !important;
+        color: #000 !important;
+        background-color: #fff !important;
+        box-shadow: none !important;
+    }
+
+    .itemInput {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input {
+            width: 15px !important;
+            height: 15px !important;
+            box-shadow: none !important;
+        }
+
+        input:checked {
+            background: #C69136 !important;
+            border-color: #C69136 !important;
+        }
+    }
+
+
+    .item:not(:last-child) {
+        padding-bottom: 20px;
+    }
+
+    .price {
+        margin-bottom: 30px;
+
+        .priceList {
+            font-weight: 700;
+            margin: 0 0 35px 0;
+            color: #00000080;
+        }
+
+        .range {
+            height: 13px;
+            margin-bottom: 20px;
+        }
+
+    }
+}

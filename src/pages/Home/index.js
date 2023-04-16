@@ -30,7 +30,7 @@ export const Home = React.memo(() => {
     const [showModal, setShowModal] = useState(false)
 
     const openModal = () => {
-        setShowModal(true)
+        setShowModal(!showModal)
     }
 
     const [loading, setLoading] = useState(true)
@@ -222,7 +222,7 @@ export const Home = React.memo(() => {
             }
             <ModalLogInOrSignUp
                 showModal={showModal}
-                onCloseModal={setShowModal}
+                onCloseModal={openModal}
             />
         </>
     )

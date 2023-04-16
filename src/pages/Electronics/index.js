@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import StyleElectronics from './Electronics.module.scss'
 import { NavbarPage } from "../../components/NavbarPage";
 import { Container } from "react-bootstrap";
-import { Situation } from "../../components/Situation";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";

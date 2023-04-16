@@ -34,6 +34,7 @@
                     justify-content: space-between;
 
                     span {
+                        font-size: 22px;
                         margin-right: 30px;
                         cursor: pointer;
                         transform: translateY(65px);
@@ -144,11 +145,6 @@
     }
 }
 
-// for modal
-.bodyForModal {
-    padding: 0;
-}
-
 @media (max-width: 1200px) {
     .body {
         padding: 80px 0 80px 0;
@@ -168,12 +164,18 @@
 
                     .label {
                         span {
-                            transform: translateY(50px);
+                            font-size: 20px;
+                            transform: translateY(51px);
                         }
                     }
 
                     .input {
+                        font-size: 24px;
                         min-height: 50px;
+                    }
+
+                    .error {
+                        font-size: 20px;
                     }
                 }
 
@@ -226,8 +228,17 @@
 
                     .label {
                         span {
-                            transform: translateY(50px);
+                            font-size: 18px;
+                            transform: translateY(51px);
                         }
+                    }
+
+                    .input {
+                        font-size: 20px;
+                    }
+
+                    .error {
+                        font-size: 16px;
                     }
                 }
 
@@ -270,8 +281,19 @@
                 .item {
                     margin-bottom: 20px;
 
+                    .label {
+                        span {
+                            transform: translateY(48px);
+                        }
+                    }
+
                     .input {
+                        font-size: 18px;
                         padding-left: 15px;
+                    }
+
+                    .error {
+                        font-size: 12px;
                     }
                 }
 

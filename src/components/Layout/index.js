@@ -37,6 +37,10 @@ export const Layout = React.memo(() => {
         setActiveLanguage(language)
     }
 
+    const openModal = () => {
+        setShowModal(!showModal)
+    }
+
     const search = (e) => {
         if (e.target.value) {
             setValueInput(e.target.value)
@@ -86,8 +90,11 @@ export const Layout = React.memo(() => {
                         <span>Petak</span>
                     </NavLink>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <div className={StyleLayout.search}>
+                    <Navbar.Collapse
+                        id="responsive-navbar-nav"
+                        style={user.id && { justifyContent: 'space-between' }}
+                    >
+                        <div className={StyleLayout.search} >
                             {showIcon &&
                                 <BsSearch
                                     className={StyleLayout.icon}
@@ -105,52 +112,59 @@ export const Layout = React.memo(() => {
                         {showModal && path !== 'login' &&
                             <ModalLogInOrSignUp
                                 showModal={showModal}
-                                onCloseModal={setShowModal}
+                                onCloseModal={openModal}
                             />
                         }
-                        <Nav className="me-auto" >
-                            <NavLink
-                                className={StyleLayout.menuItem}
-                                style={({ isActive }) =>
-                                    isActive ? activeStyle : {}
-                                }
-                                to="login"
-                            >
-                                Log In
-                            </NavLink>
-                            <NavLink
-                                className={StyleLayout.menuItem}
-                                style={({ isActive }) =>
-                                    isActive ? activeStyle : {}
-                                }
-                                to="signup"
-                            >
-                                Sign Up
-                            </NavLink>
-                        </Nav>
-                        <div className={StyleLayout.user}>
-                            {user.id && <User />}
-                        </div>
-                        <NavDropdown
-                            className={StyleLayout.languages}
-                            // id="nav-dropdown-dark-example"
-                            title={activeLanguage}
-                            menuVariant="dark"
-                            align={{ lg: 'end' }}
+                        {!user.id &&
+                            <Nav className="me-auto" >
+                                <NavLink
+                                    className={StyleLayout.menuItem}
+                                    style={({ isActive }) =>
+                                        isActive ? activeStyle : {}
+                                    }
+                                    to="login"
+                                >
+                                    Log In
+                                </NavLink>
+                                <NavLink
+                                    className={StyleLayout.menuItem}
+                                    style={({ isActive }) =>
+                                        isActive ? activeStyle : {}
+                                    }
+                                    to="signup"
+                                >
+                                    Sign Up
+                                </NavLink>
+                            </Nav>
+                        }
+                        <div
+                            className={StyleLayout.user_languages}
+                            style={user.id && { display: 'flex' }}
                         >
-                            {languages.map((language, i) => {
-                                if (language !== activeLanguage) {
-                                    return (
-                                        <NavDropdown.Item
-                                            key={i}
-                                            onClick={changeLanguage.bind(null, language)}
-                                        >
-                                            {language}
-                                        </NavDropdown.Item>
-                                    )
-                                }
-                            })}
-                        </NavDropdown>
+                            <div className={StyleLayout.user}>
+                                {user.id && <User />}
+                            </div>
+                            <NavDropdown
+                                className={StyleLayout.languages}
+                                // id="nav-dropdown-dark-example"
+                                title={activeLanguage}
+                                menuVariant="dark"
+                                align={{ lg: 'end' }}
+                            >
+                                {languages.map((language, i) => {
+                                    if (language !== activeLanguage) {
+                                        return (
+                                            <NavDropdown.Item
+                                                key={i}
+                                                onClick={changeLanguage.bind(null, language)}
+                                            >
+                                                {language}
+                                            </NavDropdown.Item>
+                                        )
+                                    }
+                                })}
+                            </NavDropdown>
+                        </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

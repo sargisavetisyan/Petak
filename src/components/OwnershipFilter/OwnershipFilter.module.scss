@@ -1,0 +1,53 @@
+.body {
+    padding: 20px;
+    text-align: start;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+    .item:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .itemInput {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input {
+            width: 15px !important;
+            height: 15px !important;
+            box-shadow: none !important;
+        }
+
+        input:checked {
+            background: #C69136 !important;
+            border-color: #C69136 !important;
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .body {
+        display: flex;
+        gap: 30px;
+        padding: 0;
+        background: none;
+        color: #FFF;
+        margin-bottom: 10px;
+
+        .item {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .body {
+        gap: 0;
+
+        .item {
+            flex: 0 1 50%;
+        }
+    }
+}

@@ -1,7 +1,6 @@
 .jobs {
     font-family: 'Sen';
     font-size: 20px;
-    height: 100%;
     background: #1E252C;
     padding: 0 0 100px 0;
 
@@ -9,153 +8,27 @@
         display: flex;
         justify-content: space-between;
 
+        .menuIcon {
+            display: none;
+        }
+
         .forms {
             width: 27%;
             display: flex;
             flex-direction: column;
 
-            .situations,
-            .operations {
-                padding: 20px;
-                text-align: start;
-                background: #FFFFFF;
-                border-radius: 10px;
-                margin-bottom: 30px;
-
-                .item:not(:last-child) {
-                    margin-bottom: 22px;
-                }
-            }
-
-            .operations {
-                .item:not(:last-child) {
-                    margin-bottom: 10px;
-                }
-
-                .item:last-child {
-                    padding-top: 15px;
-                    border-top: 1px solid #00000080;
-                }
-            }
-
-            .locations {
-                margin-bottom: 30px;
-                text-align: start;
-                overflow-y: auto;
-
-                .acardionItem {
-                    border-radius: 0px;
-                }
-
-                .title {
-                    font-weight: 700;
-                    color: #000;
-                    margin-bottom: 20px;
-                }
-
-                .itemRegion,
-                .item:not(:last-child) {
-                    margin-bottom: 20px;
-                }
-
-                .itemRegion {
-                    font-size: 16px;
-                    margin-left: 40px;
-                }
-            }
-
-            .currency {
-                text-align: start;
-                margin-bottom: 30px;
-
-
-                .item:not(:last-child) {
-                    padding-bottom: 20px;
-                }
-            }
-
-            .price {
-                margin-bottom: 30px;
-
-                .priceList {
-                    font-weight: 700;
-                    margin: 0 0 35px 0;
-                    color: #00000080;
-                }
-
-                .range {
-                    height: 13px;
-                    margin-bottom: 20px;
-                }
-
-            }
-
-            .category {
-                margin-bottom: 30px;
-                overflow-y: auto;
-
-                .content {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .content,
-                .items {
-                    padding: 0 0 0 20px;
-                    text-align: start;
-                }
-
-                .items {
-                    .item {
-                        padding-bottom: 20px;
-                    }
-                }
-
-                .title {
-                    font-weight: 700;
-                    padding-bottom: 20px;
-                    color: #000000;
-                }
-            }
-
             .swiper {
-                height: 600px;
                 border-radius: 10px;
 
                 img {
                     object-fit: cover;
                     width: 100%;
-                    height: 700px;
                 }
             }
+        }
 
-
-            // @keyframes close {
-            //     0% {
-            //         height: 400px;
-            //     }
-
-            //     25% {
-
-            //         height: 300px;
-            //     }
-
-            //     50% {
-
-            //         height: 200px;
-            //     }
-
-            //     75% {
-
-            //         height: 100px;
-            //     }
-
-            //     100% {
-
-            //         height: 0px;
-            //     }
-            // }
-
+        .swiper990 {
+            display: none;
         }
     }
 }
@@ -165,66 +38,40 @@
         .body {
             display: block;
 
+            .menuIcon {
+                display: block;
+                font-size: 40px;
+                margin-bottom: 20px;
+                color: #fff
+            }
+
             .forms {
-                width: 100%;
+                display: none;
+            }
 
-                .operations {
-                    display: flex;
-                    flex-wrap: wrap;
-                    padding: 0;
-                    background: none;
-                    color: #FFF;
-                    margin-bottom: 10px;
+            .swiper990 {
+                display: block;
+                margin-bottom: 30px;
 
-                    .item {
-                        margin-bottom: 0;
-                    }
-
-                    .item:last-child {
-                        padding-top: 0;
-                        border: none;
-                    }
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 350px;
                 }
+            }
+        }
+    }
+}
 
-                .acardion {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                }
+@media (max-width: 770px) {
+    .jobs {
+        .body {
+            .menuIcon {
+                font-size: 35px;
+            }
 
-                .locations {
-                    flex: 0 0 40%;
-                    padding: 0;
-                    margin-bottom: 10px;
-
-                }
-
-                .currency {
-                    flex: 0 0 40%;
-                    margin-bottom: 10px;
-                }
-
-                .price {
-                    flex: 0 0 40%;
-                    margin-bottom: 10px;
-                }
-
-                .category {
-                    flex: 0 0 40%;
-                    margin-bottom: 10px;
-                }
-
-                .swiper {
-                    height: 300px !important;
-                    border-radius: 0;
-                    margin-bottom: 50px;
-
-                    img {
-                        object-fit: cover;
-                        width: 100%;
-                        height: 300px;
-                    }
-                }
+            .swiper990 {
+                margin-bottom: 20px;
             }
         }
     }

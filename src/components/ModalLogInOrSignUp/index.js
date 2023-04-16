@@ -13,6 +13,7 @@ export const ModalLogInOrSignUp = React.memo(({ showModal, onCloseModal }) => {
         >
             <LogIn
                 style={true}
+                showModal={showModal}
                 onCloseModal={onCloseModal}
             />
         </Modal>

@@ -1,0 +1,62 @@
+.body {
+    margin-bottom: 30px;
+    overflow-y: auto;
+
+    button {
+        font-family: 'Sen' !important;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        font-size: 20px !important;
+        padding: 20px !important;
+        color: #000 !important;
+        background-color: #fff !important;
+        box-shadow: none !important;
+    }
+
+    h5 {
+        font-weight: 600;
+        padding: 0 0 0 10px;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0 0 0 25px;
+    }
+
+    .items {
+        font-size: 16px;
+        padding: 10px 0 10px 40px;
+        text-align: start;
+    }
+}
+
+@media (max-width: 990px) {
+    .body {
+        width: 50%;
+
+        .acardionItem {
+            border: none !important;
+            background: none !important;
+
+            button {
+                display: block !important;
+                padding: 0 !important;
+                color: #fff !important;
+                background: none !important;
+            }
+
+            h5,
+            .title,
+            .items {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .body {
+        width: 100%;
+    }
+}

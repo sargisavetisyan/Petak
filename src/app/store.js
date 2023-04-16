@@ -8,6 +8,8 @@ import materialSlice from '../features/material/materialSlice';
 import transportSlice from '../features/transport/transportSlice';
 import bookSlice from '../features/book/bookSlice';
 import userSlice from '../features/user/userSlice';
+import locationSlice from '../features/location/locationSlice';
+import categorySlice from '../features/category/categoryslice';
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +22,7 @@ export const store = configureStore({
     transportData: transportSlice,
     bookData: bookSlice,
     userData: userSlice,
+    locationData: locationSlice,
+    categoryData: categorySlice,
   },
 });
