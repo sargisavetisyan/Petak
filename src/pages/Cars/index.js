@@ -44,6 +44,7 @@ export const Cars = React.memo(() => {
                         onClick={showFilter}
                     />
                     <FilterCanvas
+                        title='Car'
                         openCanvas={show}
                         onHide={showFilter}
                     />

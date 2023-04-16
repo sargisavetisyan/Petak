@@ -6,7 +6,7 @@ import { SaleExchange } from "../Sale&Exchange";
 import { Location } from "../Location";
 import { Category } from "../Category";
 
-export const FilterCanvas = React.memo(({ openCanvas, onHide }) => {
+export const FilterCanvas = React.memo(({ title, openCanvas, onHide }) => {
 
     return (
         <div className={StyleFilterCanvas.menu}>
@@ -28,7 +28,7 @@ export const FilterCanvas = React.memo(({ openCanvas, onHide }) => {
                     <div className={StyleFilterCanvas.acardion}>
                         <Location />
                         <Category
-                            title='Job'
+                            title={title}
                         />
                     </div>
                 </Offcanvas.Body>
